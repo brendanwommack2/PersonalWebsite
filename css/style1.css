@@ -1,0 +1,97 @@
+/* CSS to set a full-page background image */
+body {
+    background-image: url("../images/Background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* Overlay for the background image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+
+
+
+/* Navbar Styling */
+.navbar {
+    background-color: #000000;   /* Black background */
+    padding: 10px 0;             /* Adds vertical padding for better spacing */
+    position: sticky;            /* Keeps the navbar fixed at the top as you scroll */
+    top: 0;
+    width: 100%;
+    z-index: 1;                  /* Ensures navbar stays on top of other elements */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;     /* Centers the navigation links */
+    list-style: none;            /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 20px;              /* Adds space between each link */
+}
+
+.navbar ul li a {
+    color: #ffffff;              /* White text color for contrast */
+    text-decoration: none;       /* Removes underline */
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #ff6600;              /* Changes link color on hover */
+}
+
+
+/* Centering text and setting full viewport height for hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* Button Styling */
+.button {
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #cc5200;
+}
+
+/* Horizontal centering for sections */
+.center-text {
+    text-align: center;
+}
