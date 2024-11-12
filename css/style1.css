@@ -1,11 +1,26 @@
 /* CSS to set a full-page background image */
 body {
+    color: #ffffff;
+}
+
+/* Home page background */
+.home-page {
     background-image: url("../images/Background1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #ffffff;
+    /*color: #ffffff;*/
+}
+
+/* Projects page background */
+.work-page {
+    background-image: url("../images/Background2.JPEG");
+    background-size: cover;
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*color: #ffffff;*/
 }
 
 /* Overlay for the background image */
@@ -79,7 +94,7 @@ body::before {
 
 /* Button Styling */
 .button {
-    background-color: #ff6600;
+    background-color: #034d0c;
     color: #ffffff;
     padding: 10px 20px;
     text-decoration: none;
@@ -88,7 +103,7 @@ body::before {
 }
 
 .button:hover {
-    background-color: #cc5200;
+    background-color: #034d0c;
 }
 
 /* Horizontal centering for sections */
