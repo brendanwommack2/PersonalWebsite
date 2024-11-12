@@ -1,6 +1,10 @@
-/* CSS to set a full-page background image */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
     color: #ffffff;
+
 }
 
 /* Home page background */
@@ -23,6 +27,17 @@ body {
     /*color: #ffffff;*/
 }
 
+/* About page background */
+.about-page {
+    background-image: url("../images/Background3.jpg"); /* Ensure correct case */
+    background-size: cover;
+    background-position: 50% 45%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+
 /* Overlay for the background image */
 body::before {
     content: "";
@@ -34,6 +49,23 @@ body::before {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
+
+
+/* Main content container */
+main {
+    flex: 1; /* Takes up all available space */
+}
+
+/* Footer styling */
+footer {
+    background-color: #000; /* Example color, adjust as needed */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
 
 
 
