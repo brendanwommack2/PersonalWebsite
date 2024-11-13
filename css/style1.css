@@ -19,9 +19,9 @@ body {
 
 /* Projects page background */
 .work-page {
-    background-image: url("../images/Background2.JPEG");
+    background-image: url("../images/Background7.jpg");
     background-size: cover;
-    background-position: 50% 25%;
+    background-position: 30% 45%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /*color: #ffffff;*/
@@ -32,6 +32,26 @@ body {
     background-image: url("../images/Background3.jpg"); /* Ensure correct case */
     background-size: cover;
     background-position: 50% 45%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* About page background */
+.about-page {
+    background-image: url("../images/Background5.jpg"); /* Ensure correct case */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* Contact page background */
+.contact-page {
+    background-image: url("../images/Background6.jpg"); /* Ensure correct case */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #ffffff;
