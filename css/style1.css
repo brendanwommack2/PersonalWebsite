@@ -7,6 +7,7 @@ body {
 
 }
 
+
 /* Home page background */
 .home-page {
     background-image: url("../images/Background1.jpg");
@@ -16,6 +17,7 @@ body {
     background-attachment: fixed;
     /*color: #ffffff;*/
 }
+
 
 /* Projects page background */
 .work-page {
@@ -27,7 +29,8 @@ body {
     /*color: #ffffff;*/
 }
 
-/* Experience page background */
+
+/* Experience Page Styling */
 .experience-page {
     background-image: url("../images/Background3.jpg"); /* Ensure correct case */
     background-size: cover;
@@ -37,28 +40,6 @@ body {
     color: #ffffff;
 }
 
-/* About page background */
-.about-page {
-    background-image: url("../images/Background5.jpg"); /* Ensure correct case */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #ffffff;
-}
-
-/* Contact page background */
-.contact-page {
-    background-image: url("../images/Background6.jpg"); /* Ensure correct case */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #ffffff;
-}
-
-
-/* Styles for the Experience Section */
 .experience-section {
     padding: 20px;
     max-width: 800px;
@@ -101,20 +82,72 @@ body {
 }
 
 
+/* About page background */
+.about-page {
+    background-image: url("../images/Background5.jpg"); /* Ensure correct case */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
 
 
+/* Contact Page Styling */
+.contact-page {
+    background-image: url("../images/Background6.jpg"); 
+    background-size: cover;
+    background-position: center 78%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
 
+.contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
 
+.contact-info {
+    font-size: 1.25em;
+    margin-top: 1em;
+}
 
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
 
+.contact-info li {
+    margin: 10px 0;
+}
 
+/* Contact Info Icons */
+.contact-info li i {
+    margin-right: 8px;
+}
 
+.contact-info li .fa-envelope {
+    color: #a51d10; /* Red for email */
+}
 
+.contact-info li .fa-linkedin {
+    color: #07669a; /* LinkedIn blue */
+}
 
+.contact-info li .fa-github {
+    color: #000000; /* GitHub black */
+}
 
+.contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-
-
+.contact-info a:hover {
+    color: #ff6600;
+}
 
 
 /* Overlay for the background image */
@@ -135,6 +168,7 @@ main {
     flex: 1; /* Takes up all available space */
 }
 
+
 /* Footer styling */
 footer {
     background-color: #000; /* Example color, adjust as needed */
@@ -142,11 +176,6 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-
-
-
-
-
 
 
 /* Navbar Styling */
@@ -202,6 +231,7 @@ footer {
     font-size: 1.5em;
     margin-bottom: 1em;
 }
+
 
 /* Button Styling */
 .button {
