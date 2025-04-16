@@ -251,3 +251,38 @@ footer {
 .center-text {
     text-align: center;
 }
+
+
+.resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px; /* optional extra side padding on smaller screens */
+}
+
+.resume-container iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f32a2a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+
+.spacer {
+    margin-top: 20px; /* or whatever spacing you want */
+}
+
