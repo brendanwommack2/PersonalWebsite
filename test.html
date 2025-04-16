@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GIS Portfolio - Joel Brendan Wommack">
+    <title>GIS Portfolio | Joel Brendan Wommack</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <style>
+        body {
+            background-color: #181818; /* Dark gray background */
+            color: #f0f0f0; /* Light text for contrast */
+        }
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            padding: 32px;
+        }
+        .layout-item {
+            background: #222;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .image-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .image-row img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background: #333;
+        }
+        @media (max-width: 900px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="gis-portfolio-page">
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gisportfolio.html">Portfolio</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="center-text">
+            <h1>GIS Portfolio</h1>
+            <p>Here are some of my GIS projects blah blah blah...</p>
+        </section>
+
+        <section class="layout-grid">
+            <!-- Section 1 -->
+            <div class="layout-item">
+                <h2><strong>Service Area Analysis</strong></h2>
+                <div class="image-row">
+                    <img src="layouts/WestPointLocationAllocationLayout.png" alt="Location-Allocation" width="700" height="500">
+                </div>
+                <p>Description of layout 1 goes here.</p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="layout-item">
+                <h2><strong>Symbology and Labeling</strong></h2>
+                <div class="image-row">
+                    <img src="layouts/OldCampusMap.png" alt="Campus Map" width="250" height="400">
+                    <img src="layouts/LabelLabFinal.png" alt="Campus Map 2" width="250" height="300">
+                </div>
+                <p>Description of layout 2 goes here.</p>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="layout-item">
+                <h2><strong>Data Visualization</strong></h2>
+                <div class="image-row">
+                    <img src="layouts/SVI_VA.png" alt="GIS Layout 3" width="700" height="500">
+                </div>
+                <p>Description of layout 3 goes here.</p>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="layout-item">
+                <h2><strong>Suitability Analysis</strong></h2>
+                <div class="image-row">
+                    <img src="layouts/CannabisCultivationShannonMO.png" alt="GIS Layout 4" width="340" height="240">
+                </div>
+                <p>Description of layout 4 goes here.</p>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="layout-item">
+                <h2><strong>3D Mapping</strong></h2>
+                <div class="image-row">
+                    <img src="layouts/3D_Mapping/LayoutVenice3D.png" alt="GIS Layout 4" width="440" height="340">
+                    <img src="layouts/3D_Mapping/Venice_Complete_Zoomed.png" alt="GIS Layout 4" width="200" height="100">
+                    <img src="layouts/3D_Mapping/Venice_in_Progress.png" alt="GIS Layout 4" width="200" height="100">
+
+
+                </div>
+                <p>Description of layout 4 goes here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Joel Brendan Wommack</p>
+    </footer>
+</body>
+</html>
