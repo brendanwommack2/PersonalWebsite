@@ -283,6 +283,60 @@ footer {
 
 
 .spacer {
-    margin-top: 20px; /* or whatever spacing you want */
+    margin-top: 20px;
 }
 
+
+
+
+/* About */
+
+.about-main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    align-items: flex-start;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    position: relative;
+    align-items: start;
+}
+
+.image-container {
+    position: sticky;
+    top: 100px;                  /* Align with top of first text block !! */
+    align-self: flex-start;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.image-container img {
+    max-height: 80vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 75vh;
+}
+
+.about-section {
+    padding: 2rem 0;
+    min-height: auto;
+}
+
+.about-section:last-child {
+    margin-bottom: 300px; /* Extra breathing room before footer */
+}

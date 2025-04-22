@@ -19,47 +19,83 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="experience-section">
-            <h1>About Me</h1>
-
-            <div class="experience-content">
-                <h2>Who I Am</h2>
-                <p>
-                    I am a senior at William and Mary pursuing a Bachelor’s degree in Computer Science with a minor in Data Science. My education has equipped me with a strong foundation in system design, database management, and machine learning, as well as a rich background in GIS through courses like Conservation GIS and Geovisualization.
-                </p>
-                <p>
-                    Beyond academics, I am a passionate conservationist with hands-on experience working in the backcountry and volunteering at William and Mary’s herbarium, where I contributed to critical data management projects. My experiences reflect my commitment to merging my technical expertise with my deep love for the natural world.
-                </p>
-                <p>
-                    At William and Mary, the liberal arts tradition has empowered me to approach problems creatively, connect interdisciplinary ideas, and adapt quickly—skills that I bring to every project I undertake.
-                </p>
-
-                <h2>What I Want to Do</h2>
-                <p>
-                    I aspire to work at the intersection of software development and GIS to create tools that empower organizations to make data-driven decisions, especially in areas like conservation, urban planning, and sustainability.
-                </p>
-                <p>
-                    While I am particularly drawn to GIS-related development, I am open to diverse roles in software engineering and data analysis where I can apply my problem-solving skills and technical expertise. Whether building web-based geospatial applications, designing intuitive user interfaces, or managing large datasets, I thrive on creating impactful solutions that address real-world challenges.
-                </p>
-
-                <h2>Why Me?</h2>
-                <p>
-                    I bring a unique combination of technical skills, real-world experience, and passion:
-                </p>
-                <ul>
-                    <li><strong>Technical Expertise:</strong> My projects have involved building APIs for geospatial data, developing web applications using frameworks like Tornado and Flask, and working with GIS tools to analyze and visualize data effectively.</li>
-                    <li><strong>Adaptability and Collaboration:</strong> Whether integrating into a European research team, collaborating with conservation crews, or volunteering on campus, I excel in dynamic environments that require teamwork and self-direction.</li>
-                    <li><strong>A Conservationist’s Perspective:</strong> My background in conservation—from working in remote backcountry locations to seeking out projects that allow me to support the conservation of the natural world—gives me a deep appreciation for the natural world and a unique lens for tackling challenges in GIS and data visualization.</li>
-                </ul>
-                <p>
-                    Employers seeking a candidate who can bridge the gap between software development and GIS with a passion for creating tools that make a difference will find that I offer a rare and valuable combination of skills, experience, and passion.
-                </p>
+    <main class="about-main">
+        <div class="about-container">
+            <div class="image-container">
+                <img id="about-image" src="images/image1.jpg" alt="Section image">
             </div>
-        </section>
+    
+            <div class="text-container">
+                <section class="about-section" data-img="images/me/sitting_grad.png">
+                    <h2>Who I Am</h2>
+                    <p>
+                        I am a senior at William & Mary pursuing a B.S. in Computer Science with a minor in Data Science and a concentration in GIS and spatial data analysis. My education has equipped me with a strong technical foundation in system design, programming (Python, C++, JavaScript), and database management, while also deepening my expertise in GIS technologies, spatial data workflows, and environmental applications through coursework like Conservation GIS and Geovisualization.
+                    </p>
+                    <p>
+                        My academic journey has been shaped by a passion for the natural world and public service. I’ve contributed to land cover change analysis and biodiversity research at the William & Mary Herbarium, worked with invasive species removal and wetland conservation through the Rocky Mountain Youth Corps, and expanded my geospatial experience internationally while researching weather patterns for the European Research Council in Germany.
+                    </p>
+                    <p>
+                        At the intersection of liberal arts and technical training, I bring creative problem-solving, interdisciplinary thinking, and adaptability to every project I undertake.
+                    </p>
+                   
+                </section>
+    
+                <section class="about-section" data-img="images/me/TreeInspecting.png">
+                    <h2>What I Want to Do</h2>
+                    <p>
+                        I aspire to work at the intersection of software development and GIS, building tools that empower organizations to make informed, data-driven decisions in conservation, urban planning, water management, and beyond.
+                    </p>
+                    <p>
+                        I'm especially drawn to roles that combine spatial analysis, clean data management, and the development of intuitive, map-based interfaces. Whether through building custom geoprocessing tools, supporting public-facing GIS platforms, or developing sustainable workflows for large datasets, I want to create solutions that make a tangible impact on environmental and community-focused initiatives.
+                    </p>
+                </section>
+    
+                <section class="about-section" data-img="images/me/Brendan_in_Norway.png">
+                    <h2>Why Me?</h2>
+                    <p>
+                        I bring a rare blend of technical expertise, field experience, and a conservationist’s perspective:
+                    </p>
+                    <ul>
+                        <li><strong>GIS & Software Proficiency:</strong> Experienced with ArcGIS Pro, ModelBuilder, Python scripting, and web development frameworks like Tornado and Flask. Skilled in managing, cleaning, and visualizing large spatial datasets.</li>
+                        <li><strong>Hands-On Field & Research Experience:</strong> From ecological fieldwork in the Rocky Mountains to spatial analysis at the William & Mary Herbarium and international research with the ERC, I understand the importance of high-quality data and thoughtful analysis.</li>
+                        <li><strong>Collaborative & Mission-Driven:</strong> I thrive in team settings and am deeply motivated by public service and environmental stewardship. I want to build tools that are not only technically sound but also meaningful and accessible.</li>
+                    </ul>
+                    <p>
+                        Employers seeking a geospatial professional with a solid technical background, field-tested problem-solving ability, and a heart for conservation will find in me a dedicated and capable candidate.
+                    </p>
+                </section>
+            </div>
+        </div>
     </main>
+    
+    
+    
     <footer>
         <p>&copy; 2025 Joel Brendan Wommack</p>
     </footer>
+
+    <script>
+        const image = document.getElementById('about-image');
+        const sections = document.querySelectorAll('.about-section');
+      
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                // When a section enters the viewport "earlier" (due to the negative rootMargin), update the image.
+                if (entry.isIntersecting) {
+                    const newImg = entry.target.getAttribute('data-img');
+                    image.src = newImg;
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: "-50px 0px 0px 0px", // This means the intersection will fire when the top of the section is 90px from the top of the viewport.
+            threshold: 0
+        });
+      
+        sections.forEach(section => observer.observe(section));
+      </script>
+      
+    
+
 </body>
 </html>
