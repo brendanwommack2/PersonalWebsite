@@ -7,8 +7,7 @@
     <title>Joel Brendan Wommack | Portfolio</title>
     <link rel="stylesheet" href="css/style1.css">
 </head>
-<main>
-<body class = "home-page">
+<body class="home-page">
     <!-- Navigation with Black Background -->
     <header class="navbar">
         <nav>
@@ -23,30 +22,49 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero center-text">
-        <h1>Joel Brendan Wommack</h1>
-        <p>Computer Science Student & Aspiring GIS Professional</p>
+    <main>
+        <section id="home" class="hero center-text">
+            <h1>Joel Brendan Wommack</h1>
+            <p>Computer Science Student & Aspiring GIS Professional</p>
 
-        <!-- Resume Button -->
-        <div class="resume-button">
-            <a href="resumePage.html" class="btn">View My Resume</a>
-        </div>
+            <!-- Resume Button -->
+            <div class="resume-button">
+                <a href="resumePage.html" class="btn">View My Resume</a>
+            </div>
 
-         <!-- Spacer -->
-        <div class="spacer"></div>
+            <!-- Spacer -->
+            <div class="spacer"></div>
 
-        <h>All background photos taken by me!</h>
-
-
-    </section>
-
-
-    
+            <h>All background photos taken by me!</h>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Joel Brendan Wommack</p>
     </footer>
+
+    <!-- RANDOM BACKGROUND SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                'Background1.jpg',
+                'Background4.jpg',
+                'lake.jpg',
+                'TrollWalking.jpeg',
+                'DolomiteView.jpeg',
+                'DolomiteValley.jpeg',
+                'FloweringTree.jpeg'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const chosenImage = `images/homeImages/${images[randomIndex]}`;
+
+            const homePage = document.querySelector('.home-page');
+            if (homePage) {
+                homePage.style.backgroundImage = `url('${chosenImage}')`;
+            }
+        });
+    </script>
 </body>
-</main>
 </html>

@@ -1,23 +1,18 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     margin: 0;
     color: #ffffff;
-
 }
-
 
 /* Home page background */
 .home-page {
-    background-image: url("../images/Background1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /*color: #ffffff;*/
 }
-
 
 /* Projects page background */
 .work-page {
@@ -26,13 +21,11 @@ body {
     background-position: 30% 45%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /*color: #ffffff;*/
 }
-
 
 /* Experience Page Styling */
 .experience-page {
-    background-image: url("../images/Background3.jpg"); /* Ensure correct case */
+    background-image: url("../images/Background3.jpg");
     background-size: cover;
     background-position: 50% 45%;
     background-repeat: no-repeat;
@@ -55,21 +48,19 @@ body {
 .experience-content {
     margin-bottom: 30px;
     padding: 15px;
-    /*background-color: #f8f8f8;*/
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Align text left within the box */
+    text-align: left;
 }
 
-.experience-content h2 {
-    font-size: 1.75em;
+.experience-content h2,
+.job-title,
+.job-details {
     color: #ffffff;
-    margin-bottom: 10px;
 }
 
 .job-title {
     font-size: 1.25em;
-    color: #ffffff;
     cursor: pointer;
     margin: 10px 0;
 }
@@ -77,14 +68,12 @@ body {
 .job-details {
     padding-left: 15px;
     font-size: 1em;
-    color: #ffffff;
     margin-top: 5px;
 }
 
-
 /* About page background */
 .about-page {
-    background-image: url("../images/Background5.jpg"); /* Ensure correct case */
+    background-image: url("../images/Background5.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -92,10 +81,9 @@ body {
     color: #ffffff;
 }
 
-
 /* Contact Page Styling */
 .contact-page {
-    background-image: url("../images/Background6.jpg"); 
+    background-image: url("../images/Background6.jpg");
     background-size: cover;
     background-position: center 78%;
     background-repeat: no-repeat;
@@ -122,21 +110,20 @@ body {
     margin: 10px 0;
 }
 
-/* Contact Info Icons */
 .contact-info li i {
     margin-right: 8px;
 }
 
 .contact-info li .fa-envelope {
-    color: #a51d10; /* Red for email */
+    color: #a51d10;
 }
 
 .contact-info li .fa-linkedin {
-    color: #07669a; /* LinkedIn blue */
+    color: #07669a;
 }
 
 .contact-info li .fa-github {
-    color: #000000; /* GitHub black */
+    color: #000000;
 }
 
 .contact-info a {
@@ -148,7 +135,6 @@ body {
 .contact-info a:hover {
     color: #ff6600;
 }
-
 
 /* Overlay for the background image */
 body::before {
@@ -162,56 +148,52 @@ body::before {
     z-index: -1;
 }
 
-
 /* Main content container */
 main {
-    flex: 1; /* Takes up all available space */
+    flex: 1;
 }
-
 
 /* Footer styling */
 footer {
-    background-color: #000; /* Example color, adjust as needed */
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 10px 0;
 }
 
-
 /* Navbar Styling */
 .navbar {
-    background-color: #000000;   /* Black background */
-    padding: 10px 0;             /* Adds vertical padding for better spacing */
-    position: sticky;            /* Keeps the navbar fixed at the top as you scroll */
+    background-color: #000000;
+    padding: 10px 0;
+    position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1;                  /* Ensures navbar stays on top of other elements */
+    z-index: 1;
 }
 
 .navbar ul {
     display: flex;
-    justify-content: center;     /* Centers the navigation links */
-    list-style: none;            /* Removes bullet points */
+    justify-content: center;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .navbar ul li {
-    margin: 0 20px;             
+    margin: 0 20px;
 }
 
 .navbar ul li a {
-    color: #ffffff;    
-    text-decoration: none;       
+    color: #ffffff;
+    text-decoration: none;
     font-weight: bold;
 }
 
 .navbar ul li a:hover {
-    color: #ff6600;  /* Changes link color on hover */
+    color: #ff6600;
 }
 
-
-/* Centering text and setting full viewport height for hero */
+/* Hero Section */
 .hero {
     display: flex;
     flex-direction: column;
@@ -232,48 +214,15 @@ footer {
     margin-bottom: 1em;
 }
 
-
 /* Button Styling */
-.button {
+.button,
+.btn {
     background-color: #034d0c;
     color: #ffffff;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-}
-
-.button:hover {
-    background-color: #034d0c;
-}
-
-/* Horizontal centering for sections */
-.center-text {
-    text-align: center;
-}
-
-
-.resume-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px; /* optional extra side padding on smaller screens */
-}
-
-.resume-container iframe {
-    width: 100%;
-    height: 800px;
-    border: none;
-}
-
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f32a2a;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
     transition: background-color 0.3s ease;
 }
 
@@ -281,16 +230,11 @@ footer {
     background-color: #555;
 }
 
-
 .spacer {
     margin-top: 20px;
 }
 
-
-
-
 /* About */
-
 .about-main {
     display: flex;
     justify-content: center;
@@ -308,13 +252,12 @@ footer {
 
 .image-container {
     position: sticky;
-    top: 100px;                  /* Align with top of first text block !! */
+    top: 100px;
     align-self: flex-start;
     height: auto;
     display: flex;
     justify-content: center;
 }
-
 
 .image-container img {
     max-height: 80vh;
@@ -334,9 +277,8 @@ footer {
 
 .about-section {
     padding: 2rem 0;
-    min-height: auto;
 }
 
 .about-section:last-child {
-    margin-bottom: 187px; /* Extra breathing room before footer */
+    margin-bottom: 187px;
 }
