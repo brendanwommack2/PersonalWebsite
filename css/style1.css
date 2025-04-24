@@ -159,6 +159,8 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    font-family: 'Lato', sans-serif;
+
 }
 
 /* Navbar Styling */
@@ -169,6 +171,7 @@ footer {
     top: 0;
     width: 100%;
     z-index: 1;
+    font-family: 'Lato', sans-serif;
 }
 
 .navbar ul {

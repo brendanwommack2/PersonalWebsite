@@ -18,6 +18,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 1;                  /* Ensures navbar stays on top of other elements */
+  font-family: 'Lato', sans-serif;
 }
 
 .navbar ul {
@@ -39,23 +40,32 @@ body {
 }
 
 .navbar ul li a:hover {
-  color: #ff6600;  /* Changes link color on hover */
+  color: #ff6600; 
 }
 
-/* Center Text Section */
-.center-text {
+.hero {
   text-align: center;
-  padding: 48px 24px 16px;
+  padding: 10px 24px 32px;
+  background: rgba(0, 0, 0, 0.6);  
+  border-radius: 12px;
+  margin: 32px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-.center-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-  background-color: #222;
-  padding: 16px 32px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  display: inline-block;
+.hero h1 {
+  font-size: 3rem;
+  /*margin-bottom: 16px;*/
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #dddddd;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 
@@ -68,7 +78,7 @@ body {
 }
 
 .layout-item {
-  background: #222;
+  background: rgba(0, 0, 0, 0.6);  
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -105,4 +115,12 @@ footer {
   padding: 24px;
   background: rgba(0, 0, 0, 0.4);
   font-size: 0.9rem;
+  font-family: 'Lato', sans-serif;
 }
+
+
+
+.full-width {
+  grid-column: span 2;
+}
+
