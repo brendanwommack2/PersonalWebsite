@@ -285,3 +285,8 @@ footer {
 .about-section:last-child {
     margin-bottom: 187px;
 }
+
+.center-text {
+    text-align: center;
+  }
+  
