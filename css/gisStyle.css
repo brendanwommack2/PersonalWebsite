@@ -160,14 +160,13 @@ footer {
 .map-series-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
+  /*grid-auto-rows: auto; */
   gap: 16px;
-  justify-items: center;
-  margin-bottom: 16px;
+  
 }
 
 .map-series-grid img {
-  width: 100%;
+  /*width: 100%;*/
   max-width: 350px; /* Adjust image size here!!!!! */
   height: auto;
   border-radius: 8px;
