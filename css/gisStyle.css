@@ -168,7 +168,7 @@ footer {
 
 .map-series-grid img {
   width: 100%;
-  max-width: 400px; /* Adjust image size here!!!!! */
+  max-width: 270px; /* Adjust image size here!!!!! */
   height: auto;
   border-radius: 8px;
   background: #333;
