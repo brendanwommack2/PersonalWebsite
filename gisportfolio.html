@@ -31,6 +31,26 @@
     </section>
 
     <section class="layout-grid">
+
+
+      <!-- Section 7: Map Series with Script -->
+      <div class="layout-item full-width">
+        <h2><strong>Automated Map Series</strong></h2>
+        <div class="map-series-grid">
+          <img src="layouts/LightMapSeries/Northeast.png" alt="Map Series 1" />
+          <img src="layouts/LightMapSeries/TexasTriangle.png" alt="Map Series 2" />
+          <img src="layouts/LightMapSeries/Southeast.png" alt="Map Series 3" />
+          <img src="layouts/LightMapSeries/Midwest.png" alt="Map Series 4" />
+          <img src="layouts/LightMapSeries/SoCal.png" alt="Map Series 5" />
+        </div>
+        <p>
+          This project automates the creation of a multi-page map series using ArcPy in ArcGIS Pro. The script loops through features in a layer and generates consistent layouts for each, streamlining workflows for recurring mapping tasks. It was used here to produce a themed series of light pollution maps across five counties.
+        </p>
+        <button class="toggle-script-btn" onclick="toggleScript()">Show/Hide Python Script</button>
+        <pre id="script-container" class="script-box" style="display:none;"></pre>
+      </div>
+
+
       <!-- Section 0 -->
       <div class="layout-item">
         <h2><strong>Habitat Suitability Analysis</strong></h2>
@@ -112,5 +132,31 @@
   <footer>
     <p>&copy; 2025 Joel Brendan Wommack</p>
   </footer>
+
+  <!-- Script to load external Python file -->
+  <script>
+    let scriptLoaded = false;
+
+    function toggleScript() {
+      const container = document.getElementById("script-container");
+      if (container.style.display === "none") {
+        container.style.display = "block";
+        if (!scriptLoaded) {
+          fetch("layouts/LightMapSeries/script.txt")
+            .then(response => response.text())
+            .then(data => {
+              container.textContent = data;
+              scriptLoaded = true;
+            })
+            .catch(error => {
+              container.textContent = "Failed to load script.";
+            });
+        }
+      } else {
+        container.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
