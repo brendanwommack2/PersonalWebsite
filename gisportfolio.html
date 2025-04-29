@@ -133,30 +133,6 @@
     <p>&copy; 2025 Joel Brendan Wommack</p>
   </footer>
 
-  <!-- Script to load external Python file -->
-  <script>
-    let scriptLoaded = false;
-
-    function toggleScript() {
-      const container = document.getElementById("script-container");
-      if (container.style.display === "none") {
-        container.style.display = "block";
-        if (!scriptLoaded) {
-          fetch("layouts/LightMapSeries/script.txt")
-            .then(response => response.text())
-            .then(data => {
-              container.textContent = data;
-              scriptLoaded = true;
-            })
-            .catch(error => {
-              container.textContent = "Failed to load script.";
-            });
-        }
-      } else {
-        container.style.display = "none";
-      }
-    }
-  </script>
 
 </body>
 </html>
