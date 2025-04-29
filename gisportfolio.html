@@ -35,7 +35,7 @@
 
       <!-- Section 7: Map Series with Script -->
       <div class="layout-item full-width">
-        <h2><strong>Automated Map Series</strong></h2>
+        <h2><strong>Automated Map Series using ArcPy Scripting</strong></h2>
         <div class="map-series-grid">
           <img src="layouts/LightMapSeries/Northeast.png" alt="Map Series 1" />
           <img src="layouts/LightMapSeries/TexasTriangle.png" alt="Map Series 2" />
@@ -44,8 +44,24 @@
           <img src="layouts/LightMapSeries/SoCal.png" alt="Map Series 5" />
         </div>
         <p>
-          This project automates the creation of a multi-page map series using ArcPy in ArcGIS Pro. The script loops through features in a layer and generates consistent layouts for each, streamlining workflows for recurring mapping tasks. It was used here to produce a themed series of light pollution maps across five counties.
+          This project automates the creation of a multi-page map series using Python and ArcPy, tailored for thematic spatial analysis across U.S. megaregions. The workflow dynamically selects geographic areas based on custom criteria such as population density thresholds and city population cutoffs, and processes raster and vector datasets to produce consistent, high-resolution outputs.
         </p>
+        
+        <p>
+          The script performs the following key tasks:
+        </p>
+        
+        <p>• Reprojects all input data to the appropriate UTM zone for spatial accuracy.</p>
+        <p>• Selects counties within a user-defined megaregion using attribute-based queries.</p>
+        <p>• Calculates and filters counties by population density to focus on high-density areas.</p>
+        <p>• Clips a light pollution raster to the selected counties for targeted visualization.</p>
+        <p>• Applies standardized symbology to ensure visual consistency across outputs.</p>
+        <p>• Identifies and clips major cities (e.g., population &gt; 400,000) to highlight urban centers within the high-density region.</p>
+        
+        <p>
+          The resulting maps were used to produce a thematic series focused on light pollution patterns across five U.S. megaregions. By encapsulating complex geoprocessing steps into a repeatable script, the project streamlines the creation of a data-rich map series.
+        </p>
+        
         <button class="toggle-script-btn" onclick="toggleScript()">Show/Hide Python Script</button>
         <pre id="script-container" class="script-box" style="display:none;"></pre>
       </div>
