@@ -14,6 +14,10 @@ body {
     background-attachment: fixed;
 }
 
+.resume-page {
+    background-color: #000;
+}
+
 /* Projects page background */
 .work-page {
     background-image: url("../images/Background7.jpg");
@@ -33,10 +37,8 @@ body {
     color: #ffffff;
 }
 
+
 .experience-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -45,30 +47,124 @@ body {
     margin-bottom: 20px;
 }
 
-.experience-content {
-    margin-bottom: 30px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
 .experience-content h2,
 .job-title,
 .job-details {
     color: #ffffff;
 }
 
-.job-title {
-    font-size: 1.25em;
-    cursor: pointer;
-    margin: 10px 0;
+
+
+/*
+.timeline {
+    margin: 5em auto;
+    max-width: 34.15em;
+}*/
+
+.timeline {
+    position: relative; /* Make it a positioned parent for the line */
+    margin: 5em auto;
+    max-width: 34.15em;
 }
 
-.job-details {
-    padding-left: 15px;
-    font-size: 1em;
-    margin-top: 5px;
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: #888;
+    z-index: 0;
+}
+
+
+
+
+.checkpoint {
+    max-width: 34em;
+    /*padding-top: 2em;*/
+    padding-bottom: 2em;
+    position: relative;
+}
+
+.timeline h1{
+    text-align: center;
+    margin: 0.3em;
+    font-size: 3em;
+}
+
+.timeline h2 {
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+.timeline h3 {
+    text-align: left;
+}
+
+.checkpoint div {
+    background-color: #000000;
+    border: 2px solid #888;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+
+.checkpoint p {
+    line-height: 27px;
+    color: #ffffff;
+}
+
+.checkpoint:nth-child(odd) {
+    border-left: 3px solid #888;
+    padding-left: 3em;
+    transform: translateX(17em);
+}
+
+.checkpoint:nth-child(even) {
+    border-right: 3px solid #888;
+    padding-right: 3em;
+    transform: translateX(-17em);
+}
+
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before {
+    content: '';
+    background: #888;
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.checkpoint:nth-child(odd)::before {
+    left: 0;
+}
+
+.checkpoint:nth-child(even)::before {
+    right: 0;
+}
+
+.checkpoint:nth-child(odd) div::before,
+.checkpoint:nth-child(even) div::before {
+    content: '';
+    background: #fff;
+    box-shadow: 0 0 0.5em #0d71fc;
+    width: 0.8em;
+    height: 0.8em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.checkpoint:nth-child(odd) div::before {
+    left: -0.5em;
+}
+
+.checkpoint:nth-child(even) div::before {
+    right: -0.5em;
 }
 
 /* About page background */
