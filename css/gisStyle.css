@@ -1,228 +1,148 @@
-/* General Reset */
+/* ---------- Base Styles ---------- */
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
-  background-color: #181818;
-  background-image: url('../images/WaimeaCanyon.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #f0f0f0;
+  background-color: #f8f9fa;
+  color: #222;
+  line-height: 1.6;
 }
 
-/* Navbar Styling */
+/* ---------- Navbar ---------- */
 .navbar {
-  background-color: #000000;   /* Black background */
-  padding: 10px 0;             /* Adds vertical padding for better spacing */
-  position: sticky;            /* Keeps the navbar fixed at the top as you scroll */
-  top: 0;
-  width: 100%;
-  z-index: 1;                  /* Ensures navbar stays on top of other elements */
-  font-family: 'Lato', sans-serif;
+  background-color: #1a1a1a;
+  padding: 1rem 0;
 }
 
 .navbar ul {
+  list-style: none;
   display: flex;
-  justify-content: center;     /* Centers the navigation links */
-  list-style: none;            /* Removes bullet points */
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
-.navbar ul li {
-  margin: 0 20px;             
+.navbar li {
+  margin: 0 1rem;
 }
 
-.navbar ul li a {
-  color: #ffffff;    
-  text-decoration: none;       
-  font-weight: bold;
+.navbar a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-  color: #ff6600; 
+.navbar a:hover {
+  color: #64b5f6;
 }
 
+/* ---------- Hero Section ---------- */
 .hero {
   text-align: center;
-  padding: 10px 24px 32px;
-  background: rgba(0, 0, 0, 0.6);  
-  border-radius: 12px;
-  margin: 32px auto;
-  max-width: 900px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  padding: 3rem 1.5rem;
+  background: linear-gradient(to right, #0e3959, #1e5f74);
+  color: #fff;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  /*margin-bottom: 16px;*/
-  font-weight: 900;
-  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.15rem;
-  color: #dddddd;
-  line-height: 1.6;
-  max-width: 700px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ---------- Layout Grid ---------- */
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-
-/* Layout Grid */
-.layout-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  padding: 32px;
-}
-
-.layout-item {
-  background: rgba(0, 0, 0, 0.6);  
+.layout-item,
+.dashboard-embed {
+  background-color: #fff;
   border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  align-self: start;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
 }
 
-/* Image Styling */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Text and Headings ---------- */
+h2 {
+  font-size: 1.5rem;
+  color: #0e3959;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Images ---------- */
 .image-row {
   display: flex;
-  gap: 16px;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .image-row img {
   max-width: 100%;
-  height: auto;
   border-radius: 8px;
-  background: #333;
-  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  .layout-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.4);
-  font-size: 0.9rem;
-  font-family: 'Lato', sans-serif;
-}
-
-
-
-.full-width {
-  grid-column: span 2;
-}
-
-
-.script-box {
-  background-color: #1e1e1e;
-  color: #f8f8f2;
-  padding: 16px;
-  margin-top: 16px;
-  border-radius: 8px;
-  overflow-x: auto;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  white-space: pre-wrap;
-  word-break: break-word;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  max-height: 400px;
-}
-
-.toggle-script-btn {
-  background-color: #333;
-  color: #fff;
+/* ---------- Dashboard Embed ---------- */
+.dashboard-frame iframe {
+  width: 100%;
+  height: 600px;
   border: none;
-  padding: 8px 16px;
-  margin-top: 8px;
-  cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-.toggle-script-btn:hover {
-  background-color: #ff6600;
-}
-
-
-
-/* Grid layout for map series (3 on top, 2 on bottom) */
+/* ---------- Map Series Grid ---------- */
 .map-series-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /*grid-auto-rows: auto; */
-  gap: 16px;
-  
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
 .map-series-grid img {
-  /*width: 100%;*/
-  max-width: 350px; /* Adjust image size here!!!!! */
+  width: 100%;
   height: auto;
   border-radius: 8px;
-  background: #333;
-  object-fit: contain;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
 }
 
 
-
-
-
-/* Dashboard Embed Section */
-.dashboard-embed {
+/* ---------- Footer ---------- */
+footer {
   text-align: center;
-  padding: 32px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  margin: 32px ;
-  max-width: 1000px; /* smaller, balanced width */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 0;
+  background-color: #1a1a1a;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 3rem;
 }
 
-.dashboard-embed h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #ffffff;
-  margin-bottom: 16px;
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .layout-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .dashboard-frame iframe {
+    height: 400px;
+  }
 }
-
-.dashboard-embed p {
-  font-size: 1.1rem;
-  color: #dddddd;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto 24px;
-}
-
-/* Responsive frame that maintains 16:9 aspect ratio */
-.dashboard-frame {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 ratio */
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.dashboard-frame iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
 
