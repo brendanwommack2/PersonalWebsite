@@ -1,0 +1,177 @@
+import ee
+from ee import batch
+import sys
+import datetime
+
+# Configuration
+PROJECT_ID = "buildtimelapse"
+ee.Initialize(project=PROJECT_ID)
+
+# Supported regions
+REGIONS = {
+    "dubai": {
+        "path": 160,
+        "row": 43,
+        "region": [
+            [55.6458, 25.3540],
+            [54.8135, 25.3540],
+            [54.8135, 24.8042],
+            [55.6458, 24.8042]
+        ]
+    },
+    "miami": {
+        "path": 15,
+        "row": 42,
+        "region": [
+            [-80.4, 25.9],
+            [-80.3, 25.9],
+            [-80.3, 25.6],
+            [-80.4, 25.6]
+        ]
+    },
+    "losangeles": {
+        "path": 41,
+        "row": 36,
+        "region": [
+            [-118.8, 34.3],
+            [-117.5, 34.3],
+            [-117.5, 33.5],
+            [-118.8, 33.5]
+        ]
+    },
+    "lakemead": {
+        "path": 39,
+        "row": 35,
+        "region": [
+            [-114.9, 36.3],
+            [-114.3, 36.3],
+            [-114.3, 35.9],
+            [-114.9, 35.9]
+        ]
+    }
+}
+
+# Argument Parsing
+if len(sys.argv) == 4:
+    region_key = sys.argv[1].lower()
+    start_date = sys.argv[2]
+    end_date = sys.argv[3]
+elif len(sys.argv) == 2:
+    region_key = sys.argv[1].lower()
+    start_date = None
+    end_date = None
+else:
+    print("Usage: python BuildTimelapse_Analysis.py region [start_date end_date]")
+    sys.exit(1)
+
+if region_key not in REGIONS:
+    print(f"Unknown region: {region_key}")
+    sys.exit(1)
+
+region_info = REGIONS[region_key]
+geometry = ee.Geometry.Polygon(region_info["region"])
+
+# Image Collection
+collection = (
+    ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA")
+    .filter(ee.Filter.eq("WRS_PATH", region_info["path"]))
+    .filter(ee.Filter.eq("WRS_ROW", region_info["row"]))
+    .filter(ee.Filter.lt("CLOUD_COVER", 5))
+    .select(["B2", "B3", "B4", "B5", "B6"])
+)
+
+if start_date and end_date:
+    collection = collection.filterDate(start_date, end_date)
+
+print("Number of images:", collection.size().getInfo())
+
+# Spectral Indices
+def add_indices(image):
+    ndvi = image.normalizedDifference(["B5", "B4"]).rename("NDVI")
+    ndwi = image.normalizedDifference(["B3", "B5"]).rename("NDWI")
+    ndbi = image.normalizedDifference(["B6", "B5"]).rename("NDBI")
+
+    return (
+        image
+        .addBands([ndvi, ndwi, ndbi])
+        .set("date", image.date().format("YYYY-MM-dd"))
+    )
+
+indexed_collection = collection.map(add_indices)
+
+# Area Based Summaries
+def area_stats(image):
+    pixel_area = ee.Image.pixelArea()
+
+    vegetation = image.select("NDVI").gt(0.4)
+    urban = image.select("NDBI").gt(0.2)
+    water = image.select("NDWI").gt(0.3)
+
+    veg_area = vegetation.multiply(pixel_area).reduceRegion(
+        reducer=ee.Reducer.sum(),
+        geometry=geometry,
+        scale=30,
+        maxPixels=1e13
+    ).get("NDVI")
+
+    urban_area = urban.multiply(pixel_area).reduceRegion(
+        reducer=ee.Reducer.sum(),
+        geometry=geometry,
+        scale=30,
+        maxPixels=1e13
+    ).get("NDBI")
+
+    water_area = water.multiply(pixel_area).reduceRegion(
+        reducer=ee.Reducer.sum(),
+        geometry=geometry,
+        scale=30,
+        maxPixels=1e13
+    ).get("NDWI")
+
+    mean_ndvi = image.select("NDVI").reduceRegion(
+        reducer=ee.Reducer.mean(),
+        geometry=geometry,
+        scale=30,
+        maxPixels=1e13
+    ).get("NDVI")
+
+    return ee.Feature(None, {
+        "date": image.get("date"),
+        "mean_ndvi": mean_ndvi,
+        "vegetation_area_m2": veg_area,
+        "urban_area_m2": urban_area,
+        "water_area_m2": water_area
+    })
+
+time_series = indexed_collection.map(area_stats)
+feature_collection = ee.FeatureCollection(time_series)
+
+# Export CSV
+
+csv_task = batch.Export.table.toDrive(
+    collection=feature_collection,
+    description=f"{region_key}_surface_change_metrics",
+    fileFormat="CSV"
+)
+
+batch.Task.start(csv_task)
+
+# Video Export
+
+def convert_rgb(image):
+    return image.select(["B4", "B3", "B2"]).multiply(512).uint8()
+
+video_collection = indexed_collection.map(convert_rgb)
+
+video_task = batch.Export.video.toDrive(
+    collection=video_collection,
+    description=f"{region_key}_timelapse_video",
+    region=region_info["region"],
+    dimensions=720,
+    framesPerSecond=2,
+    maxFrames=10000
+)
+
+batch.Task.start(video_task)
+
+print("Exports started: CSV metrics + video")

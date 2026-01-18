@@ -26,8 +26,8 @@
 
   <main>
     <section class="hero">
-      <h1>GIS Portfolio</h1>
-      <p>This collection highlights a range of GIS projects that reflect my development as a cartographer, data scientist, and programmer. It includes work assignments, personal explorations and coursework, each contributing to my growing skills in spatial analysis, map design, and storytelling through data.</p>
+      <h1>Portfolio</h1>
+      <p>This portfolio presents a selection of GIS and remote sensing projects centered on spatial data analysis, map design, and visualization. The work includes academic, professional, and independent projects that apply programming and geospatial methods to analyze environmental change, generate maps, and communicate patterns through clear, data-driven visualizations. </p>
     </section>
 
     <section class="layout-grid">
@@ -36,7 +36,7 @@
         <section class="dashboard-embed full-width">
           <h2><strong>National Trap Program Dashboard (In Progress)</strong></h2>
           <p>
-            I am currently developing this interactive dashboard from scratch for the National Fishing Trap, Removal, Assessment, and Prevention (TRAP) Program as my first solo project while working at the Virginia Institute of Marine Science (VIMS). 
+            I am currently developing this interactive dashboard from scratch for the National Fishing Trap, Removal, Assessment, and Prevention (TRAP) Program as my first independent project while working at the Virginia Institute of Marine Science (VIMS). 
             Built in ArcGIS Experience Builder, it visualizes nationwide efforts to detect and remove derelict fishing traps, specifically abandoned or lost cage-style gear that threaten marine species and habitats. 
             The dashboard integrates cleaned and standardized Survey123 data to display trap removal locations, types of gear recovered, and the target species protected through these initiatives. 
           </p>
@@ -87,6 +87,63 @@
         </iframe>
 
       </div>
+
+
+      <!-- Surface Change Analysis -->
+      <div class="layout-item full-width">
+        <h2><strong>Surface Change Analysis & Timelapse Generation (Landsat 8)</strong></h2>
+        
+        <div class="map-series-grid">
+          <figure>
+            <img src="layouts/Timelapse_Project/lakemead_sped.gif" alt="Lake Mead" />
+            <figcaption>Lake Mead, NV</figcaption>
+          </figure>
+
+          <figure>
+            <img src="layouts/Timelapse_Project/la_sped.gif" alt="Los Angeles" />
+            <figcaption>Los Angeles, CA</figcaption>
+          </figure>
+
+          <figure>
+            <img src="layouts/Timelapse_Project/dubai_sped.gif" alt="Dubai" />
+            <figcaption>Dubai, UAE</figcaption>
+          </figure>
+        </div>
+
+
+        <p>
+          This project uses automated remote sensing workflows built with the Google Earth Engine (GEE)
+          Python API to generate long-term timelapses from Landsat 8 imagery (2013–2025).
+          Satellite scenes are programmatically retrieved by path/row, filtered for cloud cover,
+          and processed to produce consistent RGB visualizations and time-series surface change metrics.
+        </p>
+
+        <p>
+          The resulting timelapses reveal distinct patterns of environmental change across regions.
+          Lake Mead shows a clear and sustained contraction of surface water and surrounding vegetation,
+          reflecting prolonged drought conditions. In contrast, Los Angeles and Dubai exhibit progressive
+          urban expansion, with increasing impervious surface extent and landscape modification over time,
+          highlighting the spatial imprint of population growth and development.
+        </p>
+
+        <p><strong>Key methods and outputs:</strong></p>
+        <p>• Automated Landsat 8 image retrieval and preprocessing</p>
+        <p>• Spectral index calculation (NDVI, NDWI, NDBI)</p>
+        <p>• Area-based summaries for vegetation, water, and urban surfaces</p>
+        <p>• Export of time-series metrics (CSV) and RGB timelapse videos</p>
+
+        <p><strong>Tools:</strong> Google Earth Engine (Python API), pandas, numpy, matplotlib</p>
+
+        <h3>Python Automation Script</h3>
+        <iframe
+          src="layouts\Timelapse_Project\script_gee.txt"
+          width="100%"
+          height="500"
+          style="border: 1px solid #ccc; border-radius: 8px; background-color: #acabab; color: #d0d0d0;">
+        </iframe>
+
+      </div>
+
 
 
       <!-- Section 0 -->
@@ -168,7 +225,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Joel Brendan Wommack</p>
+    <p>&copy; 2026 Joel Brendan Wommack</p>
   </footer>
 
 
