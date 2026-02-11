@@ -30,10 +30,26 @@
       <p>This portfolio presents a selection of GIS and remote sensing projects centered on spatial data analysis, map design, and visualization. The work includes academic, professional, and independent projects that apply programming and geospatial methods to analyze environmental change, generate maps, and communicate patterns through clear, data-driven visualizations. </p>
     </section>
 
+    <nav class="project-nav">
+  <ul>
+    <li><a href="#trap-dashboard">TRAP Dashboard</a></li>
+    <li><a href="#map-series">Automated Map Series</a></li>
+    <li><a href="#timelapse">GEE Timelapse</a></li>
+    <li><a href="#habitat-suitability">Habitat Suitability</a></li>
+    <li><a href="#service-area">Service Area</a></li>
+    <li><a href="#georeferencing">Georeferencing</a></li>
+    <li><a href="#more!">More!</a></li>
+  </ul>
+</nav>
+
+
     <section class="layout-grid">
 
+      
+
+
       <!-- ArcGIS Experience Dashboard -->
-        <section class="dashboard-embed full-width">
+        <section class="dashboard-embed full-width" id="trap-dashboard">
           <h2><strong>National Trap Program Dashboard (In Progress)</strong></h2>
           <p>
             I am currently developing this interactive dashboard from scratch for the National Fishing Trap, Removal, Assessment, and Prevention (TRAP) Program as my first independent project while working at the Virginia Institute of Marine Science (VIMS). 
@@ -43,7 +59,8 @@
           <div class="dashboard-frame">
             <iframe
               src="https://experience.arcgis.com/experience/9f8fd99e3d3e44b6b009a167b2893d18"
-              allowfullscreen>
+              allowfullscreen></iframe>> 
+              
             </iframe>
           </div>
         </section>
@@ -51,7 +68,7 @@
 
 
       <!-- Section 7: Map Series with Script -->
-      <div class="layout-item full-width">
+      <div class="layout-item full-width" id="map-series">
         <h2><strong>Automated Map Series using ArcPy Scripting</strong></h2>
         <div class="map-series-grid">
           <img src="layouts/LightMapSeries/Northeast.png" alt="Map Series 1" />
@@ -84,14 +101,15 @@
         width="100%" 
         height="500" 
         style="border: 1px solid #ccc; border-radius: 8px; background-color: #acabab; color: #d0d0d0;">
+      </iframe>>
         </iframe>
 
       </div>
 
 
       <!-- Surface Change Analysis -->
-      <div class="layout-item full-width">
-        <h2><strong>Surface Change Analysis & Timelapse Generation (Landsat 8)</strong></h2>
+      <div class="layout-item full-width" id="timelapse">
+        <h2><strong>GEE Surface Change Analysis & Timelapse Generation (Landsat 8)</strong></h2>
         
         <div class="map-series-grid">
           <figure>
@@ -118,6 +136,9 @@
           and processed to produce consistent RGB visualizations and time-series surface change metrics.
         </p>
 
+        <p><strong>Tools:</strong> Google Earth Engine (Python API)</p>
+
+        <h2>Interpreting Environmental Change</h2>
         <p>
           The resulting timelapses reveal distinct patterns of environmental change across regions.
           Lake Mead shows a clear and sustained contraction of surface water and surrounding vegetation,
@@ -126,15 +147,7 @@
           highlighting the spatial imprint of population growth and development.
         </p>
 
-        <p><strong>Key methods and outputs:</strong></p>
-        <p>• Automated Landsat 8 image retrieval and preprocessing</p>
-        <p>• Spectral index calculation (NDVI, NDWI, NDBI)</p>
-        <p>• Area-based summaries for vegetation, water, and urban surfaces</p>
-        <p>• Export of time-series metrics (CSV) and RGB timelapse videos</p>
-
-        <p><strong>Tools:</strong> Google Earth Engine (Python API), pandas, numpy, matplotlib</p>
-
-        <h3>Python Automation Script</h3>
+        <h2>Python Script</h2>
         <iframe
           src="layouts\Timelapse_Project\script_gee.txt"
           width="100%"
@@ -147,7 +160,7 @@
 
 
       <!-- Section 0 -->
-      <div class="layout-item">
+      <div class="layout-item" id="habitat-suitability">
         <h2><strong>Habitat Suitability Analysis</strong></h2>
         <div class="image-row">
           <img src="layouts/BlackBearHabitatSuitabilityCaliforniaLayout.png" alt="GIS Layout 0" />
@@ -156,7 +169,7 @@
       </div>
 
       <!-- Section 1 -->
-      <div class="layout-item">
+      <div class="layout-item" id="service-area">
         <h2><strong>Service Area Analysis</strong></h2>
         <div class="image-row">
           <img src="layouts/WestPointLocationAllocationLayout.png" alt="Location-Allocation" />
@@ -165,7 +178,7 @@
       </div>
 
       <!-- Section 1.5 -->
-      <div class="layout-item full-width">
+      <div class="layout-item full-width" id="georeferencing">
         <h2><strong>Georeferencing</strong></h2>
         <div class="image-row">
             <img src="layouts/1883ForestDensity3DSymbolized.png" alt="ForestMap" width="1000" height="700">
@@ -173,8 +186,9 @@
         <p></p>
     </div>
       
+
       <!-- Section 2 -->
-      <div class="layout-item">
+      <div class="layout-item" id="more!">
         <h2><strong>Symbology and Labeling</strong></h2>
         <div class="image-row">
             <img src="layouts/OldCampusMap.png" alt="Campus Map" width="250" height="400">
