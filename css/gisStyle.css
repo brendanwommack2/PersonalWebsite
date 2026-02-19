@@ -212,3 +212,46 @@ footer {
     display: none;
   }
 }
+
+
+
+.legend-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  border-radius: 3px;
+  border: 1px solid #333;
+}
+
+
+a {
+  color: #1b5eaa;   /* your primary blue */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1b5eaa;   /* keep same color after click */
+}
+
+a:hover {
+  color: #0d3c75;   /* darker on hover */
+  text-decoration: underline;
+}

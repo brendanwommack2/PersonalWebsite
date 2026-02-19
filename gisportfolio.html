@@ -32,9 +32,9 @@
 
     <nav class="project-nav">
   <ul>
+    <li><a href="#peatlands">Remote Classification</a></li>
     <li><a href="#trap-dashboard">TRAP Dashboard</a></li>
     <li><a href="#map-series">Automated Map Series</a></li>
-    <li><a href="#timelapse">GEE Timelapse</a></li>
     <li><a href="#habitat-suitability">Habitat Suitability</a></li>
     <li><a href="#service-area">Service Area</a></li>
     <li><a href="#georeferencing">Georeferencing</a></li>
@@ -44,6 +44,121 @@
 
 
     <section class="layout-grid">
+
+
+      <section class="layout-item full-width" id="peatlands">
+
+        <h2><strong>Peatlands in Transition: Remote Sensing Classification</strong></h2>
+
+        <p>
+          This project applies remote sensing and machine learning techniques in
+          Google Earth Engine (GEE) to classify peatlands and surrounding land cover in
+          Southern Patagonia, Chile. The work represents Phase I of my Master’s research
+          at the University of Michigan School for Environment and Sustainability and
+          establishes a baseline land cover map for a remote, cloud-prone region with
+          limited ground data.
+        </p>
+
+        <!-- PRIMARY VISUALS -->
+        <div class="map-series-grid">
+          <figure>
+            <img src="images/screenshots/NIF_Website.png" alt="Sentinel-2 False Color Composite">
+            <figcaption>Sentinel-2 False Color Composite (SWIR–NIR–Red)</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/screenshots/Classification_Website.png" alt="Supervised Land Cover Classification">
+            <figcaption><strong>Final Supervised Random Forest Classification</strong></figcaption>
+          </figure>
+        </div>
+
+        <!-- LEGEND -->
+        <div class="legend-container">
+          <h4>Land Cover Legend</h4>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-color" style="background-color:#67a9cf;"></span>
+              <span>Wetland / Peatland</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background-color:#1b7837;"></span>
+              <span>Forest</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background-color:#a6d96a;"></span>
+              <span>Grassland / Shrub</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background-color:#fdae61;"></span>
+              <span>Barren / Exposed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- METHODOLOGY -->
+        <h3>Methodology</h3>
+        <ul>
+          <li><strong>Data:</strong> Sentinel-2 Surface Reflectance (Oct 2023 – Feb 2024)</li>
+          <li><strong>Pre-processing:</strong> Cloud and shadow masking using the Scene Classification Layer (SCL)</li>
+          <li><strong>Feature Engineering:</strong> NDVI, NDMI, EVI, Tasseled Cap Wetness, and normalized slope</li>
+          <li><strong>Models Tested:</strong> K-Means clustering, SNIC object-based segmentation, and Random Forest classification</li>
+        </ul>
+
+        <!-- PROGRESSION SECTION -->
+        <h3>Model Development & Iteration</h3>
+
+        <p>
+          The final supervised classification (above) was the result of iterative experimentation.
+          Initial pixel-based K-Means clustering revealed broad spectral patterns but
+          produced noisy, fragmented outputs. Object-based segmentation using SNIC
+          improved spatial coherence by grouping spectrally similar pixels into landscape
+          objects, but proved computationally expensive and still could not deliniate forests from wetlands. Ultimately, a supervised Random Forest classifier produced the most
+          ecologically meaningful and spatially consistent results.
+        </p>
+
+        <div class="map-series-grid progression-grid">
+
+        <div class="progression-item">
+          <img src="images/screenshots/Initial_kmeans_messy.png" alt="Initial KMeans Messy">
+          <p class="progression-caption">Initial K-Means – 9 (Unsmoothed)</p>
+        </div>
+
+        <div class="progression-item">
+          <img src="images/screenshots/kmeans_4.png" alt="KMeans 4 Clusters">
+          <p class="progression-caption">K-Means – 4 Clusters</p>
+        </div>
+
+        <div class="progression-item">
+          <img src="images/screenshots/kmeans_5.png" alt="KMeans 5 Clusters">
+          <p class="progression-caption">K-Means – 5 Clusters</p>
+        </div>
+
+        <div class="progression-item">
+          <img src="images/screenshots/SNIC_4.png" alt="SNIC 4 Clusters">
+          <p class="progression-caption">SNIC Object-Based – 4 Clusters</p>
+        </div>
+
+        <div class="progression-item">
+          <img src="images/screenshots/SNIC_5.png" alt="SNIC 5 Clusters">
+          <p class="progression-caption">SNIC Object-Based – 5 Clusters</p>
+        </div>
+
+      </div>
+
+
+        <!-- GITHUB -->
+        <p>
+          <strong>Source Code:</strong>
+          <a href="https://github.com/brendanwommack2/Land-Classification-Seno-Obstruccion-" target="_blank">
+            View project on GitHub
+          </a>
+        </p>
+
+      </section>
+
+
+
+
 
       
 
@@ -106,56 +221,6 @@
 
       </div>
 
-
-      <!-- Surface Change Analysis -->
-      <div class="layout-item full-width" id="timelapse">
-        <h2><strong>GEE Surface Change Analysis & Timelapse Generation (Landsat 8)</strong></h2>
-        
-        <div class="map-series-grid">
-          <figure>
-            <img src="layouts/Timelapse_Project/lakemead_sped.gif" alt="Lake Mead" />
-            <figcaption>Lake Mead, NV</figcaption>
-          </figure>
-
-          <figure>
-            <img src="layouts/Timelapse_Project/la_sped.gif" alt="Los Angeles" />
-            <figcaption>Los Angeles, CA</figcaption>
-          </figure>
-
-          <figure>
-            <img src="layouts/Timelapse_Project/dubai_sped.gif" alt="Dubai" />
-            <figcaption>Dubai, UAE</figcaption>
-          </figure>
-        </div>
-
-
-        <p>
-          This project uses automated remote sensing workflows built with the Google Earth Engine (GEE)
-          Python API to generate long-term timelapses from Landsat 8 imagery (2013–2025).
-          Satellite scenes are programmatically retrieved by path/row, filtered for cloud cover,
-          and processed to produce consistent RGB visualizations and time-series surface change metrics.
-        </p>
-
-        <p><strong>Tools:</strong> Google Earth Engine (Python API)</p>
-
-        <h2>Interpreting Environmental Change</h2>
-        <p>
-          The resulting timelapses reveal distinct patterns of environmental change across regions.
-          Lake Mead shows a clear and sustained contraction of surface water and surrounding vegetation,
-          reflecting prolonged drought conditions. In contrast, Los Angeles and Dubai exhibit progressive
-          urban expansion, with increasing impervious surface extent and landscape modification over time,
-          highlighting the spatial imprint of population growth and development.
-        </p>
-
-        <h2>Python Script</h2>
-        <iframe
-          src="layouts\Timelapse_Project\script_gee.txt"
-          width="100%"
-          height="500"
-          style="border: 1px solid #ccc; border-radius: 8px; background-color: #acabab; color: #d0d0d0;">
-        </iframe>
-
-      </div>
 
 
 
