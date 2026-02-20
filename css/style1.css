@@ -18,6 +18,57 @@ body {
     background-color: #000;
 }
 
+
+.resume-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.resume-content {
+    width: 65%;
+    max-width: 900px;
+    height: 75vh;
+    background: #fff;
+    border-radius: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.resume-content iframe {
+    flex: 1;
+    border: none;
+}
+
+.close-resume {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #444;
+}
+
+.download-btn {
+    text-align: center;
+    padding: 12px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
 /* Projects page background */
 .work-page {
     background-image: url("../images/Background7.jpg");

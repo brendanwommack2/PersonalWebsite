@@ -36,8 +36,8 @@
 
             <!-- Resume Button -->
         <div class="resume-button">
-            <a href="resumePage.html" class="btn">View My Resume</a>
-        </div>
+            <button id="openResume" class="btn">View Resume</button>
+            </div>
 
         
         </section>
@@ -45,6 +45,40 @@
     <footer>
         <p>&copy; 2025 Joel Brendan Wommack</p>
     </footer>
+
+    <!-- Resume Modal -->
+        <div id="resumeModal" class="resume-modal">
+            <div class="resume-content">
+                <span class="close-resume">&times;</span>
+                <iframe src="pdfs/CURRENT_Resume.pdf"></iframe>
+                
+            </div>
+        </div>
 </body>
 </html>
 
+
+
+
+
+
+<script>
+const resumeModal = document.getElementById("resumeModal");
+const openResume = document.getElementById("openResume");
+const closeResume = document.querySelector(".close-resume");
+
+openResume.onclick = () => resumeModal.style.display = "flex";
+closeResume.onclick = () => resumeModal.style.display = "none";
+
+window.onclick = (e) => {
+    if (e.target === resumeModal) {
+        resumeModal.style.display = "none";
+    }
+};
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        resumeModal.style.display = "none";
+    }
+});
+</script>
