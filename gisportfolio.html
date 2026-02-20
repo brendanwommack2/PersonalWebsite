@@ -36,9 +36,8 @@
     <li><a href="#trap-dashboard">TRAP Dashboard</a></li>
     <li><a href="#map-series">Automated Map Series</a></li>
     <li><a href="#habitat-suitability">Habitat Suitability</a></li>
-    <li><a href="#service-area">Service Area</a></li>
-    <li><a href="#georeferencing">Georeferencing</a></li>
-    <li><a href="#more!">More!</a></li>
+    <li><a href="#gis-analysis">Geospatial Analysis</a></li>
+    <li><a href="#cartographic-gallery">More!</a></li>
   </ul>
 </nav>
 
@@ -52,7 +51,7 @@
 
         <p>
           This project applies remote sensing and machine learning techniques in
-          Google Earth Engine (GEE) to classify peatlands and surrounding land cover in
+          Google Earth Engine (GEE) to classify wetlands and surrounding land cover in
           Southern Patagonia, Chile. The work represents Phase I of my Master’s research
           at the University of Michigan School for Environment and Sustainability and
           establishes a baseline land cover map for a remote, cloud-prone region with
@@ -174,10 +173,18 @@
           <div class="dashboard-frame">
             <iframe
               src="https://experience.arcgis.com/experience/9f8fd99e3d3e44b6b009a167b2893d18"
-              allowfullscreen></iframe>> 
+              allowfullscreen></iframe>
               
             </iframe>
           </div>
+          <p>
+          <strong>View on the TRAP Program Site:</strong>
+          <a href="https://www.trapprogram.org/" target="_blank">
+            View site
+          </a>
+        </p>
+
+
         </section>
 
 
@@ -225,7 +232,7 @@
 
 
       <!-- Section 0 -->
-      <div class="layout-item" id="habitat-suitability">
+      <div class="layout-item" id="gis-analysis">
         <h2><strong>Habitat Suitability Analysis</strong></h2>
         <div class="image-row">
           <img src="layouts/BlackBearHabitatSuitabilityCaliforniaLayout.png" alt="GIS Layout 0" />
@@ -234,7 +241,7 @@
       </div>
 
       <!-- Section 1 -->
-      <div class="layout-item" id="service-area">
+      <div class="layout-item" id="gis-analysis">
         <h2><strong>Service Area Analysis</strong></h2>
         <div class="image-row">
           <img src="layouts/WestPointLocationAllocationLayout.png" alt="Location-Allocation" />
@@ -242,63 +249,156 @@
         <p></p> 
       </div>
 
-      <!-- Section 1.5 -->
-      <div class="layout-item full-width" id="georeferencing">
-        <h2><strong>Georeferencing</strong></h2>
-        <div class="image-row">
-            <img src="layouts/1883ForestDensity3DSymbolized.png" alt="ForestMap" width="1000" height="700">
+
+
+
+
+
+
+
+      <!-- Richmond Crime & Environmental Risk Analysis -->
+        <div class="layout-item full-width" id="gis-analysis">
+
+          <h2><strong>Environmental Risk Factors & Crime Patterns — Richmond, VA</strong></h2>
+
+          <p>
+            This project investigates spatial relationships between environmental infrastructure 
+            characteristics and crime patterns across Richmond, Virginia police sectors. 
+            Environmental variables include urban tree canopy (extracted using Google Earth Engine), 
+            road proximity coverage, and nighttime light exposure derived from satellite data. 
+            These variables were analyzed alongside aggregated crime categories to explore 
+            potential correlations between urban form and public safety outcomes.
+          </p>
+
+          <div class="map-series-grid">
+
+            <figure>
+              <img src="layouts/RichmondCrime/Environment.png" 
+                  alt="Environmental Variables - Tree Cover, Road Cover, Nighttime Light">
+              <figcaption>
+                Environmental Conditions — Urban Tree Canopy (GEE), Road Coverage, Nighttime Light Exposure
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/RichmondCrime/Crime.png" 
+                  alt="Richmond Crime by Police Sector">
+              <figcaption>
+                Crime Distribution — Total Crime and Total Violent Crime by Police Sector
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/RichmondCrime/Analysis.png" 
+                  alt="Correlation Matrix Analysis">
+              <figcaption>
+                Correlation Matrix — Environmental Risk Factors vs Crime Types
+              </figcaption>
+            </figure>
+
+          </div>
+
+          <p>
+            A Python-based workflow was developed to calculate pairwise correlations between 
+            environmental risk indicators and crime categories. Results were visualized through 
+            a correlation heatmap, highlighting statistically meaningful associations such as 
+            relationships between reduced tree canopy, limited lighting exposure, and specific 
+            offense types. This integrated GIS and data science approach demonstrates how 
+            remote sensing, spatial analysis, and statistical modeling can be combined to 
+            evaluate urban environmental influences on crime patterns.
+          </p>
+
         </div>
-        <p></p>
-    </div>
+
+
+
+
+
+
+
+
+
+
       
 
-      <!-- Section 2 -->
-      <div class="layout-item" id="more!">
-        <h2><strong>Symbology and Labeling</strong></h2>
-        <div class="image-row">
-            <img src="layouts/OldCampusMap.png" alt="Campus Map" width="250" height="400">
-            <img src="layouts/LabelLabFinal.png" alt="Label Lab" width="250" height="400">
-        </div>
-        <p></p>
-    </div>
 
-      <!-- Section 3 -->
-      <div class="layout-item">
-        <h2><strong>Choropleth Visualization</strong></h2>
-        <div class="image-row">
-          <img src="layouts/SVI_VA.png" alt="GIS Layout 3" />
-        </div>
-        <p></p>
-      </div>
+      <!-- Cartographic & Spatial Analysis Gallery -->
+        <div class="layout-item full-width" id="cartographic-gallery">
+          <h2><strong>Cartographic & Spatial Analysis Gallery</strong></h2>
 
-      <!-- Section 4 -->
-      <div class="layout-item">
-        <h2><strong>3D Mapping</strong></h2>
-        <div class="image-row">
-          <img src="layouts/3D_Mapping/LayoutVenice3D.png" alt="Venice 3D" />
-          <img src="layouts/3D_Mapping/Venice_Complete_Zoomed.png" alt="Venice Zoomed" />
-          <img src="layouts/3D_Mapping/Venice_in_Progress.png" alt="Venice In Progress" />
-        </div>
-        <p></p>
-      </div>
+          <div class="map-gallery-grid">
 
-      <!-- Section 5 -->
-      <div class="layout-item">
-        <h2><strong>Suitability Analysis</strong></h2>
-        <div class="image-row">
-          <img src="layouts/CannabisCultivationShannonMO.png" alt="GIS Layout 5" />
-        </div>
-        <p></p>
-      </div>
+            <figure>
+              <img src="layouts/1883ForestDensity3DSymbolized.png" alt="Georeferenced Historical Forest Map">
+              <figcaption>Georeferencing – 1883 Forest Density Map</figcaption>
+            </figure>
 
-      <!-- Section 6 -->
-      <div class="layout-item">
-        <h2><strong>More...</strong></h2>
-        <div class="image-row">
-          <img src="layouts/UrbanGrowthAtlantaLayout.png" alt="GIS Layout 6" />
+            <figure>
+              <img src="layouts/OldCampusMap.png" alt="Campus Map">
+              <figcaption>W&M Campus Map</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/LabelLabFinal.png" alt="Labeling Exercise">
+              <figcaption>Label Hierarchy - NYC</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/SVI_VA.png" alt="Choropleth Visualization">
+              <figcaption>Social Vulnerability Index Choropleth</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/3D_Mapping/LayoutVenice3D.png" alt="Venice 3D Layout">
+              <figcaption>3D Mapping – Venice Layout</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/3D_Mapping/Venice_Complete_Zoomed.png" alt="Venice 3D Zoom">
+              <figcaption>3D Mapping – Detail View</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/3D_Mapping/Venice_in_Progress.png" alt="Venice Work in Progress">
+              <figcaption>3D Mapping – Workflow Progression</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/CannabisCultivationShannonMO.png" alt="Suitability Analysis">
+              <figcaption>Suitability Analysis for Shannon County, MO</figcaption>
+            </figure>
+
+            <figure>
+              <img src="layouts/UrbanGrowthAtlantaLayout.png" alt="Urban Growth Atlanta">
+              <figcaption>Atlanta Urban Growth Analysis</figcaption>
+            </figure>
+
+          </div>
+
+          <p>
+            This gallery showcases selected cartographic and spatial analysis projects, 
+            including georeferencing, suitability modeling, 3D visualization, thematic 
+            mapping, and symbology refinement. Together, these works demonstrate 
+            technical proficiency in GIS workflows and an emphasis on clear, 
+            publication-quality map design.
+          </p>
+
         </div>
-        <p></p>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </section>
   </main>
@@ -306,6 +406,44 @@
   <footer>
     <p>&copy; 2026 Joel Brendan Wommack</p>
   </footer>
+
+
+  <!-- Image Lightbox Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close-modal");
+
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
 
 
 </body>
