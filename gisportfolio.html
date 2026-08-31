@@ -34,6 +34,7 @@
   <ul>
     <li><a href="#peatlands">Remote Classification</a></li>
     <li><a href="#trap-dashboard">TRAP Dashboard</a></li>
+    <li><a href="#river-temp-dashboard">River Temp Dashboard</a></li>
     <li><a href="#map-series">Automated Map Series</a></li>
     <li><a href="#gis-analysis">Geospatial Analysis</a></li>
     <li><a href="#cartographic-gallery">More!</a></li>
@@ -184,6 +185,31 @@
         </p>
 
 
+        </section>
+
+
+
+      <!-- Grand Canyon Trust River Temperature Dashboard -->
+        <section class="dashboard-embed full-width" id="river-temp-dashboard">
+          <h2><strong>Colorado River Temperature Interactive Dashboard</strong></h2>
+          <p>
+            As a GIS Intern with the Grand Canyon Trust, I built this dashboard
+            using Observable Framework to track daily water temperature of the Colorado River at river
+            mile 15 in Grand Canyon National Park. The
+            dashboard visualizes current and historical temperature trends against the 59.9°F
+            "cool-mix" threshold, which triggers targeted cold-water releases from Glen Canyon Dam to
+            help suppress nonnative fish and protect native species like the humpback chub.
+          </p>
+          <a class="dashboard-preview-link" href="https://grandcanyontrust.github.io/river-temp-dashboard/" target="_blank" rel="noopener" aria-label="Open the Colorado River Temperature Dashboard in a new tab">
+            <div class="dashboard-preview">
+              <img src="layouts/RiverDashboard/dashboard.jpg" alt="Colorado River Temperature Dashboard preview" class="dashboard-preview-img">
+              <span class="dashboard-preview-badge">Open interactive dashboard ↗</span>
+            </div>
+          </a>
+          <p>
+            Data from <a href="https://waterdata.usgs.gov/monitoring-location/USGS-09380000" target="_blank">USGS Gage 09380000</a>,
+            temperature estimates based on the Dibble et al. (2020) thermal model. Built for the Grand Canyon Trust.
+          </p>
         </section>
 
 
@@ -420,7 +446,7 @@
   const modalImg = document.getElementById("modalImage");
   const closeBtn = document.querySelector(".close-modal");
 
-  document.querySelectorAll("img").forEach(img => {
+  document.querySelectorAll("img:not(.dashboard-preview-img)").forEach(img => {
     img.addEventListener("click", function() {
       modal.style.display = "block";
       modalImg.src = this.src;

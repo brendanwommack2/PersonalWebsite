@@ -175,6 +175,60 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.7);
 }
 
+/* ---------- Dashboard Preview (clickable "little window") ---------- */
+.dashboard-preview-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin: 1rem 0;
+}
+
+.dashboard-preview {
+  position: relative;
+  width: 100%;
+  max-width: 640px;   /* ← change this number to resize the whole card */
+  margin: 0 auto;      /* centers it; remove this to left-align */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-preview-link:hover .dashboard-preview {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.9);
+}
+
+.dashboard-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-preview-link:hover .dashboard-preview-img {
+  transform: scale(1.03);
+}
+
+.dashboard-preview-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(15, 17, 26, 0.75);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(3px);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.dashboard-preview-link:hover .dashboard-preview-badge {
+  background-color: #00ffd5;
+  color: #0f111a;
+}
+
 
 /* ---------- Footer ---------- */
 footer {
